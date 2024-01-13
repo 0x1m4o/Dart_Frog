@@ -1,16 +1,9 @@
 import 'package:dart_frog/dart_frog.dart';
 
+import '../core/connection/handler.dart';
+
 Handler middleware(Handler handler) {
   return (context) async {
-    // Execute code before request is handled.
-
-    // Forward the request to the respective handler.
-    final response = await handler(context);
-
-    // Execute code after request is handled.
-
-    // Return a response.
-    print('middleware executed');
-    return response;
+    return Connection.init(context, handler);
   };
 }

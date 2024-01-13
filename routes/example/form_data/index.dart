@@ -4,7 +4,7 @@ import 'dart:io';
 
 import 'package:dart_frog/dart_frog.dart';
 
-import '../../utils/message.dart';
+import '../../../core/utils/message.dart';
 
 List<dynamic> field = ['username', 'email', 'password'];
 Future<Response> onRequest(RequestContext context) async {
