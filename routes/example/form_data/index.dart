@@ -17,7 +17,7 @@ Future<Response> onRequest(RequestContext context) async {
   // Field Check
   for (final elements in field) {
     if (!formData.containsKey(elements)) {
-      return Response.json(body: message('$elements cannot be empty'));
+      return Response.json(body: messageJson('$elements cannot be empty'));
     }
   }
 
@@ -26,11 +26,11 @@ Future<Response> onRequest(RequestContext context) async {
   if (photo == null) {
     return Response.json(
       statusCode: HttpStatus.badRequest,
-      body: message('photo cannot be empty'),
+      body: messageJson('photo cannot be empty'),
     );
   }
 
   return Response.json(
-    body: message('Data berhasil di upload'),
+    body: messageJson('Data berhasil di upload'),
   );
 }
